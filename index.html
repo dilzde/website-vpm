@@ -1,1522 +1,795 @@
-/* ==================
-   Main Stylesheet
-   ================== */
-/* ------------------
-   Global Variables
-   ------------------ */
-:root {
-    --primary-color: #007bff;
-    --primary-color-light: #66b3ff;
-    --primary-color-dark: #0056b3;
-    --secondary-color: #3f88c5;
-    --accent-color: #f2c94c;
-    --dark-color: #333333;
-    --light-color: #f5f5f5;
-    --text-color: #333333;
-    --text-color-light: #f5f5f5;
-    --text-color-muted: #777777;
-    --body-font: 'Poppins', sans-serif;
-    --heading-font: 'Montserrat', sans-serif;
-    --border-radius: 5px;
-    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --background-gradient: linear-gradient(to bottom right, #007bff, #0056b3);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPM International - Voice of Potter's Ministry</title>
+    <meta name="description" content="Voice of Potter's Ministry International - A church with branches across Kenya. Experience powerful prophecies, life-changing services, and community support.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="vpmlogo.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabPanes = document.querySelectorAll(".tab-pane");
 
-/* ------------------
-   CSS Reset
-   ------------------ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const target = button.dataset.tab;
 
-html {
-    scroll-behavior: smooth;
-}
+        // Remove active from all buttons
+        tabButtons.forEach(btn => btn.classList.remove("active"));
 
-body {
-    font-family: var(--body-font);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-color);
-    overflow-x: hidden;
-}
+        // Hide all panes
+        tabPanes.forEach(pane => pane.classList.remove("active"));
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
+        // Activate clicked tab and its pane
+        button.classList.add("active");
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  });
+</script>
 
-a:hover {
-    color: var(--primary-color-dark);
-}
+<body>
+    <!-- Header Section -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <h1>VPM <span>International</span></h1>
+                </a>
+            </div>
+            
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <i class="fas fa-bars"></i>
+            </label>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#prophecies">Prophecies</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#branches">Branches</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/Asrieltelevision" target="_blank" aria-label><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/vpmintl?igsh=dmhlcGdmamJmaG9l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/vpmintl?t=xHzTAfI-YXrIvp-vd4Lf6A&s=09" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@asrieltv01?_t=ZM-8wZKJajE7sr&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com/@asrieltv?si=y6qVjuSPB8NfAtV3" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
 
-ul {
-    list-style: none;
-}
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-fade-in">Welcome to Voice of Potter's Messengers Ministry</h1>
+                <h2 class="animate-fade-in">Where Prophecies Come to Life</h2>
+                <p class="animate-fade-in">Experience the power of God's word through prophetic revelations, spiritual guidance, and a loving community.</p>
+                <div class="cta-buttons animate-fade-in">
+                    <a href="#prophecies" class="btn btn-primary">Explore Prophecies</a>
+                    <a href="#contact" class="btn btn-secondary">Book A Meeting</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Discover Our Ministry</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="vpmlogo.png" alt="VPM Church Building">
+                </div>
+                <div class="about-text">
+                    <h3>Our Vision</h3>
+                    <p>VPM International was founded with a vision to spread Yahweh's Prophetic word and bring spiritual guidance to all who seek it. For over 15 years, we have been a beacon of hope, faith, and spiritual awakening in Kenya and beyond.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to deliver accurate prophetic messages, provide spiritual guidance, and create a supportive community where members can grow in their faith and understanding of Yahweh's plan for their lives.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">15</span>
+                            <p>Branches</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1000">37</span>
+                            <p>Years in Ministry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-button,
-input,
-textarea,
-select {
-    font-family: inherit;
-    font-size: inherit;
-    outline: none;
-    border: none;
-}
+    <!-- Prophecies Section -->
+    <section id="prophecies" class="prophecies">
+        <div class="container">
+          <div class="section-header">
+            <h2>Prophecies</h2>
+            <p>Revelations From God</p>
+          </div>
+      
+          <div class="tabs">
+            <div class="tab-buttons">
+              <div class="tab-btn active" data-tab="fulfilled">Fulfilled Prophecies</div>
+              <div class="tab-btn" data-tab="pending">Pending Prophecies</div>
+            </div>
+      
+            <div class="tab-content">
+              <!-- Fulfilled Prophecies -->
+              <div class="tab-pane active" id="fulfilled">
+                <div class="prophecy-grid">
+                  
+                  <!-- Fulfilled Prophecy 1 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>2025 AUC Prophecy</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Aug 2024</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-fulfilled">Fulfilled</div>
+                      <p>Foretold Raila will lose the AUC chair. He lost as He did not change tactics.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/v5CJVP10DMw?si=5uwUFYxE_xBenCG3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Fulfilled Prophecy 2 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Warning to Kenya's Deputy President</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Nov 2024</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-fulfilled">Fulfilled</div>
+                      <p>Prophesied DP Kindiki will have a rough time in office.</p>
+                      <div class="video-embed">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/sPo1Raxxo30?si=C3-X7nUm6bKSfCEz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Fulfilled Prophecy 3 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Kenya sold to higher demons</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Jul 2024</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-fulfilled">Fulfilled</div>
+                      <p> The reason why the currency is the way it is.</p>
+                      <div class="video-embed">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/oilaTylaRfs?si=qvKJWiNa-3zN7DC_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Fulfilled Prophecy 4 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Coming of an Alien Pope.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Apr 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-fulfilled">Fulfilled</div>
+                      <p>The spirit inside the pope is an evil spirit.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LAPj702twHg?si=fzOb-fiI_0xHpFHf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Fulfilled Prophecy 5 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Mysterious death for corrupt leaders.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Sept 2024</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-fulfilled">Fulfilled</div>
+                      <p>Deaths of those who are selling the country to foreigners.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/wWQju1udCQo?si=XXM5gONi-vkJE2ub" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Fulfilled Prophecy 6 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Fall of the Men of God.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Jan 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-fulfilled">Fulfilled</div>
+                      <p>Problem is not the government leadership but the church leadership.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hjHXNPQgZjo?si=c4nox0fFBsj7E9rx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
 
-button {
-    cursor: pointer;
-    background: none;
-}
+              <section>
+                  <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://www.youtube.com/watch?v=q8HWR32EbvA&list=PLM_RhJ_e_hqlRj5uG-GZi5v356DgSW1hz" target="_blank" class="btn-more-prophecies">
+                              📺 More Prophecies
+                    </a>
+              </div>
+            </section>
 
-/* Hide radio buttons used for tab controls */
-input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
+      <section>
+              <!-- Pending Prophecies -->
+              <div class="tab-pane" id="pending">
+                <div class="prophecy-grid">
+      
+                  <!-- Pending Prophecy 1 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Africa Revival Prophecy</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> May 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-pending">Pending</div>
+                      <p>Mass spiritual awakening will start from Africa</p>
+                      <div class="video-embed">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/DCUrHWMEzHA?si=2VRCZ5So1B7INprV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Pending Prophecy 2 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Raila and Ruto's fate.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Feb 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-pending">Pending</div>
+                      <p>Insight on Raila and Ruto's legacies.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/q8HWR32EbvA?si=W9aWDX5qEX3rV4yA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Pending Prophecy 3 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Warning to the Church Leaders.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Jan 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-pending">Pending</div>
+                      <p>Warning from Yahweh involving Kenyan Church leaders.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/M7Vkw6_JmHQ?si=U9xpUAn_r7GvM7IU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Pending Prophecy 4 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Bible Corruption Prophecy.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Feb 2024</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-pending">Pending</div>
+                      <p>Hidden scheme to corrupt the Bible.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FoE4nDena1A?si=C1Bd6XIyzE_WG4r7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Pending Prophecy 5 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>The World,USA and President Trump.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Feb 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-pending">Pending</div>
+                      <p>Pray for Pres. Trump or else...</p>
+                      <div class="video-embed">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/CbzMumoRgQI?si=WMtB0GrcI9rOZ7zX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Pending Prophecy 6 -->
+                  <div class="prophecy-card">
+                    <div class="prophecy-content">
+                      <h3>Awakening of unstoppable youth.</h3>
+                      <div class="prophecy-meta">
+                        <div><i class="fas fa-calendar-alt"></i> Feb 2025</div>
+                        <div><i class="fas fa-user"></i> Prophet</div>
+                      </div>
+                      <div class="prophecy-status status-pending">Pending</div>
+                      <p>Youths will unite to fight the disastrous regime.</p>
+                      <div class="video-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Nq-rEwRqI3k?si=lFU0U-cj19iEOvAF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+              </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+    </section>
+      </section>
 
-/* ------------------
-   Utility Classes
-   ------------------ */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Church Service Schedule</h2>
+            <p>Join us in worship, prophecy, and spiritual growth</p>
+          </div>
+      
+          <div class="service-category">
+            <h3 class="category-title">Regular Services</h3>
+      
+            <!-- Sunday Morning -->
+            <div class="service-card">
+              <h4><b>SUNDAY MORNING SERVICE</b></h4>
+              <p><strong>Time:</strong> Sunday 8:00 AM - 2:30 PM</p>
+              <ul>
+                <li>Powerful praise and worship, the word of God, and ministry time.</li>
+                <li>1. Ministration by Apostles</li>
+                <li>2. Ministration by Prophet</li>
+                <li>3. Prophetic Clinic / Checking</li>
+              </ul>
+            </div>
+      
+            <!-- Tuesday Service -->
+            <div class="service-card">
+              <h4><b>TUESDAY NIGHT PROPHETIC TEACHING</b></h4>
+              <p><strong>Time:</strong> Tuesday 8:00 PM - 10:00 PM</p>
+              <ul>
+                <li>Prophetic knowledge dispensation.</li>
+                <li>Experience the hidden nature of Yahweh and understand His Word on a greater level.</li>
+              </ul>
+            </div>
+      
+            <!-- Friday Service -->
+            <div class="service-card">
+              <h4><b>FRIDAY NIGHT PROPHETIC TEACHING</b></h4>
+              <p><strong>Time:</strong> Friday 8:00 PM - 10:00 PM</p>
+              <ul>
+                <li>Prophetic knowledge dispensation.</li>
+                <li>Revelations and divine teaching led Prophet Dr. Samo Mtishiby.</li>
+              </ul>
+            </div>
+      
+            <!-- Wednesday Early Morning Worship -->
+            <div class="service-card">
+              <h4><b>WEDNESDAY MORNING PROPHETIC WORSHIP</b></h4>
+              <p><strong>Time:</strong> Wednesday 4:00 AM - 6:00 AM</p>
+              <ul>
+                <li>Early morning glorification and worship of Yahweh.</li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="service-category">
+            <h3 class="category-title">Special Services</h3>
+      
+            <!-- Special Prophetic Service -->
+      
+            <!-- Prophetic Kesha -->
+            <div class="service-card">
+              <h4><b>PROPHETIC KESHA</b></h4>
+              <p><strong>Time:</strong> Every 3rd last Sunday of the month</p>
+              <ul>
+                <li>Overnight vigil of intense worship, prophecy, and intercession.</li>
+              </ul>
+            </div>
+      
+            <!-- Prophetic Mountain Prayers -->
+            <div class="service-card">
+              <h4><b>PROPHETIC MOUNTAIN PRAYERS</b></h4>
+              <p><strong>Time:</strong> Last Sunday of every month</p>
+              <ul>
+                <li>Prayer gathering on the mountain for breakthrough, healing, and direction.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
 
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
+    <!-- Branches Section -->
+    <section id="branches" class="branches">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Branches</h2>
+          <p>Find Us Near You</p>
+        </div>
+    
+        <div class="branch-grid">
+          <!-- Kisumu -->
+          <div class="branch-card">
+            <div class="branch-header">
+              <h3>Kisumu Headquarters</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> Kisumu, Kenya
+              </div>
+            </div>
+            <div class="branch-content">
+              <div class="branch-info">
+                <div><i class="fas fa-map-pin"></i> <span>Brighlight Kisumu</span></div>
+                <div><i class="fas fa-phone"></i> <span>+254757871123</span></div>
+                <div><i class="fas fa-envelope"></i> <span>:vpminternational2@gmail.com</span></div>
+              </div>
+              <div class="branch-actions">
+                <a href="https://maps.app.goo.gl/CzAQhusk4crKfLjHA" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+                <a href="mailto:"><i class="fas fa-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Nairobi -->
+          <div class="branch-card">
+            <div class="branch-header">
+              <h3>Nairobi Branch</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya
+              </div>
+            </div>
+            <div class="branch-content">
+              <div class="branch-info">
+                <div><i class="fas fa-map-pin"></i> <span>Family bank, Mlolongo</span></div>
+                <div><i class="fas fa-phone"></i> <span>+254794731831</span></div>
+                <div><i class="fas fa-envelope"></i> <span>vpminternational2@gmail.com</span></div>
+              </div>
+              <div class="branch-actions">
+                <a href="https://maps.app.goo.gl/XyRajWmu3kFt8h5K9" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+                <a href="mailto:vpminternational2@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Kisumu -->
+          <div class="branch-card">
+            <div class="branch-header">
+              <h3>Kisumu Branch</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> Kisumu, Kenya
+              </div>
+            </div>
+            <div class="branch-content">
+              <div class="branch-info">
+                <div><i class="fas fa-map-pin"></i> <span>Nyamasaria</span></div>
+                <div><i class="fas fa-phone"></i> <span>+254720408630</span></div>
+                <div><i class="fas fa-envelope"></i> <span>:vpminternational2@gmail.com</span></div>
+              </div>
+              <div class="branch-actions">
+                <a href="https://maps.google.com/?q=-0.091702,34.767956" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+                <a href="mailto:kisumu@vpminternational.org"><i class="fas fa-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Juja -->
+          <div class="branch-card">
+            <div class="branch-header">
+              <h3>Juja Branch</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> Githurai, Kenya
+              </div>
+            </div>
+            <div class="branch-content">
+              <div class="branch-info">
+                <div><i class="fas fa-map-pin"></i> <span>Githurai</span></div>
+                <div><i class="fas fa-phone"></i> <span>+254794731831</span></div>
+                <div><i class="fas fa-envelope"></i> <span>:vpminternational2@gmail.com</span></div>
+              </div>
+              <div class="branch-actions">
+                <a href="https://maps.app.goo.gl/srN8HdKuGXu9zSbw8" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+                <a href="mailto:eldoret@vpminternational.org"><i class="fas fa-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Nakuru -->
+          <div class="branch-card">
+            <div class="branch-header">
+              <h3>Siaya Branch</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> Siaya, Kenya
+              </div>
+            </div>
+            <div class="branch-content">
+              <div class="branch-info">
+                <div><i class="fas fa-map-pin"></i> <span>Siaya</span></div>
+                <div><i class="fas fa-phone"></i> <span>+254 794 731 831</span></div>
+                <div><i class="fas fa-envelope"></i> <span>:vpminternational2@gmail.com</span></div>
+              </div>
+              <div class="branch-actions">
+                <a href="https://maps.google.com/?q=-0.303099,36.080026" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+                <a href="mailto:nakuru@vpminternational.org"><i class="fas fa-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Machakos -->
+          <div class="branch-card">
+            <div class="branch-header">
+              <h3>Machakos Branch</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> Machakos, Kenya
+              </div>
+            </div>
+            <div class="branch-content">
+              <div class="branch-info">
+                <div><i class="fas fa-map-pin"></i> <span>Machakos</span></div>
+                <div><i class="fas fa-phone"></i> <span>+254 794 731 831</span></div>
+                <div><i class="fas fa-envelope"></i> <span>:vpminternational2@gmail.com</span></div>
+              </div>
+              <div class="branch-actions">
+                <a href="https://maps.google.com/?q=-1.517683,37.263414" target="_blank"><i class="fas fa-directions"></i> Get Directions</a>
+                <a href="mailto:machakos@vpminternational.org"><i class="fas fa-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
-.section-header h2 {
-    font-family: var(--heading-font);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    position: relative;
-    display: inline-block;
-}
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+          <div class="section-header">
+              <h2>Contact Us</h2>
+              <p>Get in Touch</p>
+          </div>
+  
+          <div class="contact-container">
+              <div class="contact-info">
+                  <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <h3>Our Location</h3>
+                      <p>Mlolongo, Machakos, Kenya</p>
+                  </div>
+  
+                  <div class="info-item">
+                      <i class="fab fa-whatsapp"></i>
+                      <h3>Chat on WhatsApp</h3>
+                      <p><a href="https://wa.me/254794731831" target="_blank">Click to Message Us</a></p>
+                  </div>
+  
+                  <div class="info-item">
+                      <i class="fas fa-phone-alt"></i>
+                      <h3>Call Us</h3>
+                      <p><a href="tel:+254700000000">+254 794 731831</a></p>
+                  </div>
+  
+                  <div class="info-item">
+                      <i class="fas fa-clock"></i>
+                      <h3>Service Hours</h3>
+                      <p>Sunday: 9:00 AM - 1:00 PM</p>
+                      <p>Tuesday: 8:30 PM - 10:30 PM</p>
+                      <p>Friday: 8:30 PM - 10:00 PM</p>
+                  </div>
+              </div>
+  
+              <div class="contact-form">
+                  <div class="whatsapp-cta">
+                      <i class="fab fa-whatsapp"></i>
+                      <h3>Need Help?</h3>
+                      <p>Start a conversation with us now</p>
+                      <a href="https://wa.me/254794731831" target="_blank" class="btn btn-primary">
+                          Message Us on WhatsApp
+                      </a>
+                      <p style="margin-top: 15px;">or</p>
+                      <a href="tel:+254794731831" class="btn btn-call">
+                          Call Us Now
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+      <div class="container">
+        <div class="section-header">
+          <h2>Book A Meeting</h2>
+          <p>Meet With Our Prophet</p>
+        </div>
+    
+        <div class="booking-container">
+          <div class="booking-info">
+            <h3>Why Book A Meeting?</h3>
+            <p>
+              Personal meetings with our prophet provide an opportunity for individual
+              guidance, spiritual counsel, and specific prophetic words for your life
+              situation.
+            </p>
+            <ul>
+              <li><i class="fas fa-check"></i> Personalized prophetic word</li>
+              <li><i class="fas fa-check"></i> Spiritual guidance</li>
+              <li><i class="fas fa-check"></i> Prayer for specific needs</li>
+              <li><i class="fas fa-check"></i> Life direction and counsel</li>
+            </ul>
+          </div>
+    
+          <div class="booking-form booking-actions">
+            <a href="tel:+254794731831" class="btn btn-call">Call Now</a>
+            <a
+              href="https://wa.me/254794731831"
+              target="_blank"
+              class="btn btn-whatsapp"
+              >Message on WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
-.section-header h2::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-color);
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+     <!-- Testimonials Section -->
+   <!-- Testimonials Section with Google Forms and Awesome Table -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>Testimonials</h2>
+      <p>What People Are Saying</p>
+    </div>
 
-.section-header p {
-    font-size: 1.2rem;
-    color: var(--text-color-muted);
-}
+    <!-- Embedded Google Form for submitting testimonials -->
+    <div class="share-testimony">
+      <h3>Share Your Testimony</h3>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeGhcyR3jDht2hiw64QuqvGgZCoOCm-GhC9ix3o-I_ZFl7ywQ/viewform?embedded=true" width="640" height="718" frameborder="0" marginheight="0" marginwidth="0"" 
+        width="100%" 
+        height="800" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+      </iframe>
+    </div>
+  </div>
+</section>
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-color-dark);
-    color: var(--text-color-light);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary-color-dark);
-    color: var(--text-color-light);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Loading Spinner */
-.loading-spinner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    color: var(--primary-color);
-}
-
-.loading-spinner i {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* ------------------
-   Header Styles
-   ------------------ */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: transparent;
-    padding: 20px 0;
-    transition: var(--transition);
-}
-
-/* Header changes on scroll - using JS to add this class */
-.header.scrolled {
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-    padding: 15px 0;
-}
-/* Add this to your main.css */
-.header.hide-header {
-    transform: translateY(-100%); /* Move it completely out of view upwards */
-    /* You might want to adjust the transition for hiding specifically */
-    transition: transform 0.3s ease-out; /* Example transition */
-}
-/* Ensure the default state (not hidden) has a transition too */
-.header {
-    /* Keep your existing transition or refine it */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo a {
-    display: flex;
-    align-items: center;
-}
-
-.logo h1 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-color-light);
-    transition: var(--transition);
-}
-
-.logo h1 span {
-    color: var(--accent-color);
-}
-
-.header.scrolled .logo h1 {
-    color: var(--primary-color);
-}
-
-/* Mobile menu toggle */
-.nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    display: none;
-    font-size: 1.5rem;
-    color: var(--text-color-light);
-    cursor: pointer;
-}
-
-.header.scrolled .nav-toggle-label {
-    color: var(--text-color);
-}
-
-/* Navigation Menu */
-.nav-menu ul {
-    display: flex;
-}
-
-.nav-menu li {
-    margin-left: 30px;
-}
-
-.nav-menu a {
-    font-weight: 500;
-    color: var(--text-color-light);
-    position: relative;
-    padding: 5px 0;
-}
-
-.header.scrolled .nav-menu a {
-    color: var(--text-color);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    left: 0;
-    bottom: 0;
-    transition: var(--transition);
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--accent-color);
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-left: 10px;
-    color: var(--text-color-light);
-    transition: var(--transition);
-}
-
-.header.scrolled .social-links a {
-    background-color: rgba(0, 123, 255, 0.1); /* Changed from purple-like RGBA to blue */ [cite: 275]
-    color: var(--primary-color);
-}
-
-.social-links a:hover {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    transform: translateY(-3px);
-}
-
-/* ------------------
-   Hero Section
-   ------------------ */
-.hero {
-    position: relative;
-    height: 100vh;
-    background: url('/images/hero-bg.jpg') no-repeat center center/cover;
-    color: var(--text-color-light);
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.8)); /* Changed from purple-like RGBA to blue */ [cite: 301]
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-family: var(--heading-font);
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: var(--accent-color);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* ------------------
-   About Section
-   ------------------ */
-.about {
+<!-- Adjusted CSS (simplified since layout is now iframe-based) -->
+<style>
+  .testimonials {
     padding: 100px 0;
     background-color: #fff;
-}
+  }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.about-image {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-}
-
-.about-text h3 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.about-text p {
-    margin-bottom: 25px;
-    font-size: 1.1rem;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-between;
+  .section-header h2,
+  .section-header p {
     text-align: center;
-    margin-top: 40px;
-}
-
-.stat-item {
-    flex: 1;
-}
-
-.stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 10px;
-}
+  }
 
-.stat-item p {
-    font-size: 1.1rem;
-    color: var(--text-color-muted);
-    margin-bottom: 0;
-}
-
-/* ------------------
-   Tabs - CSS Only
-   ------------------ */
-.tabs {
-    margin-bottom: 50px;
-}
-
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.tab-btn {
-    padding: 12px 25px;
-    background: transparent;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-color-muted); /* Changed from purple to muted text color */ [cite: 475]
-    cursor: pointer;
-    position: relative;
-    transition: var(--transition);
-}
-
-.tab-btn::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 0;
-    height: 3px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-}
-
-/* Styles for active tabs */
-input[type="radio"]:checked + .tab-btn {
-    color: var(--primary-color);
-}
-
-input[type="radio"]:checked + .tab-btn::after {
-    width: 100%;
-}
-
-/* Tab content */
-.tab-content .tab-pane {
-    display: none;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-/* Show content when radio is checked */
-#tab-fulfilled:checked ~ .tab-content #fulfilled-prophecies,
-#tab-pending:checked ~ .tab-content #pending-prophecies,
-#tab-regular:checked ~ .tab-content #regular-services,
-#tab-special:checked ~ .tab-content #special-services {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ------------------
-   Prophecies Section
-   ------------------ */
-.section-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color); /* Changed from purple to primary blue */ [cite: 453]
-}
-
-.section-header p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-.tabs {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #ccc;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--primary-color); /* Changed from purple to primary blue */ [cite: 475]
-    transition: background 0.3s;
-}
-
-.tab-btn:hover,
-.tab-btn.active {
-    background: rgba(0, 123, 255, 0.1); /* Changed from light purple to light blue transparent */ [cite: 480]
-}
-
-.tab-content {
-    padding: 2rem;
-}
-
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-.prophecy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.prophecy-card {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.prophecy-card:hover {
-    transform: translateY(-5px);
-}
-
-.prophecy-content h3 {
-    margin: 0.5rem 0;
-    color: var(--primary-color); /* Changed from purple to primary blue */ [cite: 508]
-}
-
-.prophecy-meta {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 0.5rem;
-}
-
-.prophecy-status {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.status-fulfilled {
-    color: green;
-}
-
-.status-pending {
-    color: orange;
-}
-
-.video-embed iframe {
-    width: 100%;
-    height: 200px;
-    border: none;
-    border-radius: 8px;
-}
-.btn-more-prophecies {
-    display: inline-block;
-    background-color: var(--primary-color); /* Changed from deep purple to primary blue */ [cite: 533]
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-.btn-more-prophecies:hover {
-    background-color: var(--primary-color-dark); /* Changed from dark red/brown to darker primary blue */ [cite: 542]
-}
-
-/* ------------------
-   Services Section
-   ------------------ */
-.service-category {
-    margin-bottom: 3rem;
-    /* Enable Grid Layout for children */
-    display: grid;
-    /* Define responsive columns: auto-fit creates as many columns as fit, each min 300px wide */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* Adds space between grid items (service cards and title) */
-}
-
-.category-title {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    /* Make the title span all columns in the grid */
-    grid-column: 1 / -1;
-}
-
-.service-card {
-    background: #fdfdfd;
-    border-left: 5px solid var(--primary-color);
-    padding: 1.5rem;
-    /* Remove margin-bottom as 'gap' on the parent now handles spacing */
-    margin-bottom: 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease; /* Ensure smooth transitions for hover effects */
-}
-
-/* Add hover effect for beautification */
-.service-card:hover {
-    transform: translateY(-5px); /* Lifts the card slightly on hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow on hover for depth */
-}
-
-.service-card h4 {
-    margin-top: 0;
-    color: #333;
-}
-
-.service-card ul {
-    margin: 0.5rem 0 0 1rem;
-    padding-left: 1rem;
-}
-
-/* ------------------
-   Branches Section
-   ------------------ */
-.branches {
-    padding: 100px 0;
-    background-color: var(--light-color);
-}
-
-.branches-map {
-    height: 400px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    margin-bottom: 50px;
-    box-shadow: var(--box-shadow);
-    background-color: #f0f0f0;
-}
-
-.map-placeholder {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color-muted);
-}
-
-.map-placeholder i {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.branch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-
-.branch-card {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-}
-
-.branch-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.branch-header {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    padding: 20px;
-}
-
-.branch-header h3 {
-    font-family: var(--heading-font);
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.branch-location {
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-.branch-location i {
-    margin-right: 5px;
-}
-
-.branch-content {
-    padding: 25px;
-}
-
-.branch-info {
-    margin-bottom: 20px;
-}
-
-.branch-info div {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.branch-info i {
-    margin-right: 10px;
-    color: var(--primary-color);
-    font-size: 1rem;
-    margin-top: 4px;
-}
-
-.branch-actions {
-    display: flex;
-    justify-content: space-between;
-}
-
-.branch-actions a {
-    display: flex;
-    align-items: center;
-    background-color: transparent; /* Changed from light lavender/purple to transparent to allow specific button colors */ [cite: 661]
-    justify-content: center;
-    padding: 10px 15px;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-.branch-directions {
-    background-color: rgba(var(--primary-color), 0.1); /* Changed from purple-ish RGBA to blue */ [cite: 669]
-    color: var(--primary-color);
-}
-
-.branch-directions i {
-    margin-right: 5px;
-}
-
-.branch-contact {
-    background-color: rgba(63, 136, 197, 0.1);
-    color: var(--secondary-color);
-}
-
-.branch-contact i {
-    margin-right: 5px;
-}
-
-/* ------------------
-   Testimonials Carousel - CSS Only
-   ------------------ */
-.testimonials {
-    padding: 100px 0;
-    background-color: #fff;
-}
-
-.testimonial-carousel {
+  .testimonial-carousel,
+  .share-testimony {
     max-width: 800px;
     margin: 0 auto 50px;
-    position: relative;
-}
+  }
 
-.testimonial-slides {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-}
-
-.testimonial-slide {
-    flex: 0 0 100%;
-    padding: 30px;
-    background-color: var(--light-color);
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.5s ease;
-}
-
-/* CSS-only carousel using radio buttons */
-#testimonial-1:checked ~ .testimonial-slides {
-    transform: translateX(0);
-}
-
-#testimonial-2:checked ~ .testimonial-slides {
-    transform: translateX(-100%);
-}
-
-#testimonial-3:checked ~ .testimonial-slides {
-    transform: translateX(-200%);
-}
-
-.testimonial-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.testimonial-controls label {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #dddddd;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.testimonial-controls label:hover {
-    background-color: #bbbbbb;
-}
-
-#testimonial-1:checked ~ .testimonial-controls label:nth-child(1),
-#testimonial-2:checked ~ .testimonial-controls label:nth-child(2),
-#testimonial-3:checked ~ .testimonial-controls label:nth-child(3) {
-    background-color: var(--primary-color);
-    transform: scale(1.2);
-}
-
-.testimonial-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 20px;
-    border: 3px solid var(--primary-color);
-}
-
-.testimonial-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.testimonial-quote {
-    font-size: 1.1rem;
-    font-style: italic;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.testimonial-quote::before,
-.testimonial-quote::after {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: absolute;
-    color: rgba(var(--primary-color), 0.2); /* Changed from purple-like RGBA to blue */ [cite: 765]
-    font-size: 1.5rem;
-}
-
-.testimonial-quote::before {
-    content: '\f10d'; /* quote-left */
-    top: -10px;
-    left: -15px;
-}
-
-.testimonial-quote::after {
-    content: '\f10e'; /* quote-right */
-    bottom: -10px;
-    right: -15px;
-}
-
-.testimonial-author {
-    font-family: var(--heading-font);
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-.testimonial-location {
-    font-size: 0.9rem;
-    color: var(--text-color-muted);
-}
-
-.share-testimony {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: var(--light-color);
+  iframe {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-}
+  }
 
-.share-testimony h3 {
+  .share-testimony h3 {
     font-family: var(--heading-font);
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 20px;
     color: var(--primary-color);
     text-align: center;
-}
-
-.testimonial-form .form-group {
-    margin-bottom: 20px;
-}
-
-.testimonial-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.testimonial-form input,
-.testimonial-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: var(--border-radius);
-    background-color: #fff;
-}
-
-.testimonial-form input:focus,
-.testimonial-form textarea:focus {
-    border-color: var(--primary-color);
-}
-
-.testimonial-form button {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* Form validation styles */
-input:invalid,
-textarea:invalid,
-select:invalid {
-    border-color: #ff3860;
-}
-
-input:focus:invalid,
-textarea:focus:invalid,
-select:focus:invalid {
-    box-shadow: 0 0 0 0.2rem rgba(255, 56, 96, 0.25);
-}
-
-/* ------------------
-   Contact Section
-   ------------------ */
-.contact {
-    padding: 100px 0;
-    background-color: var(--light-color);
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-}
-
-.contact-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.info-item {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    text-align: center;
-}
-
-.info-item i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.info-item h3 {
-    font-family: var(--heading-font);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.info-item p {
-    margin-bottom: 5px;
-}
-
-.contact-form {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.whatsapp-cta {
-    text-align: center;
-}
-
-.whatsapp-cta i {
-    font-size: 3rem;
-    color: var(--primary-color-dark); /* Changed from deep purple to darker primary blue */ [cite: 893]
-    margin-bottom: 15px;
-}
-
-.whatsapp-cta h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.whatsapp-cta p {
-    margin-bottom: 20px;
-}
-
-.whatsapp-cta .btn {
-    padding: 12px 20px;
-    background-color: var(--primary-color); /* Changed from deep purple to primary blue */ [cite: 906]
-    color: #fff;
-    border: none;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-}
-
-.whatsapp-cta .btn-call {
-    background-color: var(--primary-color-dark); /* Changed from deep purple to darker primary blue */ [cite: 915]
-}
-
-/* ------------------
-   Booking Section
-   ------------------ */
-.booking {
-    padding: 100px 0;
-    background-color: #fff;
-}
-
-.booking-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.booking-info {
-    padding-right: 30px;
-}
-
-.booking-info h3 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.booking-info p {
-    margin-bottom: 25px;
-    font-size: 1.1rem;
-}
-
-.booking-info ul {
-    list-style: none;
-}
-
-.booking-info li {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-}
-
-.booking-info li i {
-    color: var(--primary-color);
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.booking-actions {
-    background-color: var(--light-color);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.booking-actions .btn {
-    text-align: center;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    font-size: 1rem;
-    display: block;
-    color: #fff;
-}
-
-.btn-call {
-    background-color: var(--primary-color-dark); /* Changed from deep purple to darker primary blue */ [cite: 978]
-}
-
-.btn-whatsapp {
-    background-color: var(--primary-color); /* Changed from deep purple to primary blue */ [cite: 981]
-}
-
-
-/* ------------------
-   Footer
-   ------------------ */
-.footer {
-    background-color: #2a2a2a;
-    color: var(--text-color-light);
-    padding: 80px 0 30px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
-    gap: 50px;
-    margin-bottom: 50px;
-}
-
-.footer-logo h2 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.footer-logo span {
-    color: var(--accent-color);
-}
-
-.footer-logo p {
-    margin-bottom: 20px;
-    opacity: 0.8;
-}
-
-.footer-links h3,
-.footer-social h3,
-.footer-newsletter h3 {
-    font-family: var(--heading-font);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--text-color-light);
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-links h3::after,
-.footer-social h3::after,
-.footer-newsletter h3::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 3px;
-    background-color: var(--primary-color);
-    bottom: 0;
-    left: 0;
-}
-
-.footer-links ul li {
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: rgba(255, 255, 255, 0.8);
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-    padding-left: 5px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-color-light);
-    transition: var(--transition);
-}
-
-.social-icons a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-.footer-newsletter form {
-    display: flex;
-    margin-top: 20px;
-}
-
-.footer-newsletter input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-color-light);
-}
-
-.footer-newsletter button {
-    padding: 0 20px;
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-bottom p {
-    opacity: 0.7;
-}
-
-/* ------------------
-   Back to Top Button
-   ------------------ */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 45px;
-    height: 45px;
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--box-shadow);
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-}
-
-.back-to-top.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    background-color: var(--primary-color-dark);
-    color: var(--text-color-light);
-    transform: translateY(-5px);
-}
-
-/* ------------------
-   Animations
-   ------------------ */
-.animate-fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease forwards;
-}
-
-.animate-fade-in:nth-child(1) {
-    animation-delay: 0.3s;
-}
-
-.animate-fade-in:nth-child(2) {
-    animation-delay: 0.6s;
-}
-
-.animate-fade-in:nth-child(3) {
-    animation-delay: 0.9s;
-}
-
-.animate-fade-in:nth-child(4) {
-    animation-delay: 1.2s;
-}
-
-/* Error and success messages */
-.error-message,
-.success-message {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: var(--border-radius);
-    display: flex;
-    align-items: center;
-}
-
-.error-message {
-    background-color: rgba(255, 56, 96, 0.1);
-    color: #ff3860;
-}
-
-.success-message {
-    background-color: rgba(39, 174, 96, 0.1);
-    color: #27ae60;
-}
-
-.error-message i,
-.success-message i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-/* ------------------
-   Responsive Styles
-   ------------------ */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 960px;
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        max-width: 720px;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .about-content,
-    .contact-container,
-    .booking-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Mobile menu styles */
-    .nav-toggle-label {
-        display: block;
-        z-index: 2000;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 100vh;
-        background-color: #fff;
-        padding: 80px 20px 20px;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
-        z-index: 1500;
-    }
-
-    .nav-toggle:checked ~ .nav-menu {
-        right: 0;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-    }
-
-    .nav-menu li {
-        margin: 10px 0;
-        width: 100%;
-    }
-
-    .nav-menu a {
-        color: var(--text-color) !important;
-        display: block;
-        padding: 10px 0;
-        font-size: 1.1rem;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label i::before {
-        content: '\f00d'; /* fa-times */
-    }
-
-    .social-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 576px) {
-    .container {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero h2 {
-        font-size: 1.3rem;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .tab-buttons {
-        flex-direction: column;
-        gap: 10px;
-        border-bottom: none;
-    }
-
-    .tab-btn {
-        width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .testimonial-slide {
-        /* ... existing content ... */
-    }
-}
+  }
+</style>
+
+<!-- No JavaScript needed unless you want extra interactivity -->
+<script>
+  // Optional: Add dynamic resizing or confirmation alerts here if needed.
+</script>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>VPM <span>International</span></h2>
+                    <p>Voice of Prophecy Ministry International - Where prophecies come to life.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#prophecies">Prophecies</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#branches">Branches</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/Asrieltelevision" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/vpmintl?igsh=dmhlcGdmamJmaG9l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/vpmintl?t=xHzTAfI-YXrIvp-vd4Lf6A&s=09" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@asrieltv?si=y6qVjuSPB8NfAtV3" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 VPM International. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript - Minimal -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="main.js"></script>
+</body>
+</html>
