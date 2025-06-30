@@ -6,9 +6,9 @@
    Global Variables 
    ------------------ */
    :root {
-    --primary-color: #800080;
-    --primary-color-light: #800080;
-    --primary-color-dark: #7c1859;
+    --primary-color: #007bff;
+    --primary-color-light: #66b3ff;
+    --primary-color-dark: #0056b3;
     --secondary-color: #3f88c5;
     --accent-color: #f2c94c;
     --dark-color: #333333;
