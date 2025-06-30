@@ -6,11 +6,11 @@
    Global Variables 
    ------------------ */
    :root {
-    --primary-color: #800080;
-    --primary-color-light: #800080;
-    --primary-color-dark: #7c1859;
-    --secondary-color: #3f88c5;
-    --accent-color: #f2c94c;
+      --primary-color: #007bff; /* A standard blue */
+    --primary-color-light: #66b3ff; /* A lighter blue */
+    --primary-color-dark: #0056b3; /* A darker blue for hover/active states */
+    --secondary-color: #3f88c5; /* This one is already a blue shade, you can keep it or adjust */
+    --accent-color: #f2c94c; /* Keep your accent color if you like, or change it */
     --dark-color: #333333;
     --light-color: #f5f5f5;
     --text-color: #333333;
