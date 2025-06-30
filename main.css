@@ -44,7 +44,6 @@
     color: var(--text-color);
     background-color: var(--light-color);
     overflow-x: hidden;
-     background: var(--background-gradient)
   }
   
   a {
