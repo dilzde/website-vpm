@@ -21,6 +21,8 @@
     --border-radius: 5px;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+      --background-gradient: linear-gradient(to bottom right, #007bff, #0056b3);
+   
   }
   
   /* ------------------
@@ -42,6 +44,7 @@
     color: var(--text-color);
     background-color: var(--light-color);
     overflow-x: hidden;
+     background: var(--background-gradient)
   }
   
   a {
