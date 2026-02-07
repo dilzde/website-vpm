@@ -987,6 +987,77 @@ input[type="radio"]:checked + .tab-btn::after {
     margin-top: 10px;
 }
 
+/* --- Form Container --- */
+.form-col {
+    background-color: #ffffff; /* White background */
+    padding: 30px;
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    max-width: 600px; /* Prevents it from getting too wide */
+    margin: 0 auto; /* Centers the form */
+}
+
+/* --- Form Title --- */
+.form-title {
+    color: #333333;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Labels --- */
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444; /* Dark grey for readability */
+}
+
+/* --- Input Fields (Matches the Inquiry Form) --- */
+.theme-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px; /* Space between fields */
+    border: 1px solid #e1e1e1;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Very light grey background */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+
+.theme-input:focus {
+    outline: none;
+    border-color: #9b59b6; /* Purple highlight when clicking */
+    background-color: #fff;
+}
+
+/* --- Submit Button (The Purple Button) --- */
+.btn-submit {
+    display: inline-block;
+    width: 100%;
+    background-color: #9b59b6; /* VPM Purple */
+    color: white;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: #8e44ad; /* Slightly darker purple on hover */
+}
+
+/* --- Spacing --- */
+.form-spacing {
+    display: flex;
+    flex-direction: column;
+}
 /* Form validation styles */
 input:invalid,
 textarea:invalid,
