@@ -1240,7 +1240,50 @@ select:focus:invalid {
     background-color: var(--primary-color); /* Changed from deep purple to primary blue */ [cite: 981]
 }
 
+/* --- Booking Section Specifics --- */
+.booking-section {
+    max-width: 800px; /* Wider than the contact form to fit the Google Form */
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 
+/* --- The Notice Box (Purple/Blue Style) --- */
+.notice-box {
+    background-color: #e8f0fe; /* Light blue background to stand out */
+    border-left: 5px solid #9b59b6; /* VPM Purple accent */
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notice-icon {
+    font-size: 24px;
+    color: #9b59b6; /* VPM Purple */
+}
+
+.notice-content {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* --- Responsive Google Form --- */
+.google-form-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+}
 /* ------------------
    Footer
    ------------------ */
